@@ -1,0 +1,13 @@
+{
+  "rust-analyzer.cargo.features": [
+    "eh02",
+    "eh10",
+    "defmt",
+    "rt",
+    "lpc11u37",
+    "lqfp64",
+    "intrinsics"
+],
+"rust-analyzer.cargo.allTargets": false,
+"rust-analyzer.cargo.target": "thumbv6m-none-eabi"
+}

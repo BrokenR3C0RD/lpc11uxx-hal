@@ -1,0 +1,37 @@
+[package]
+name = "lpc11uxx-hal"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+cortex-m = "0.7.7"
+cortex-m-rt = { version = "0.7.5", optional = true }
+critical-section = "1.2.0"
+defmt = { version = "0.3.x", optional = true }
+eh02 = { version = "0.2.7", package = "embedded-hal", features = ["unproven"], optional = true }
+eh10 = { version = "1.0.0", package = "embedded-hal", optional = true }
+embassy-hal-internal = { git = "https://github.com/embassy-rs/embassy", rev = "a7ffa44a08cfd8daf054c555056ab10360593840", features = [
+    "cortex-m",
+    "prio-bits-2",
+] }
+embedded-storage = "0.3.1"
+log = { version = "0.4.27", optional = true }
+lpc11uxx2 = { git = "https://github.com/BrokenR3C0RD/lpc11uxx2" }
+
+[features]
+default = ["eh02", "eh10", "rt"]
+defmt = ["dep:defmt", "lpc11uxx2/defmt", "eh10/defmt-03"]
+rt = ["lpc11uxx2/rt", "dep:cortex-m-rt"]
+
+lpc11u34 = []
+lpc11u35 = []
+lpc11u36 = []
+lpc11u37 = []
+
+hvqfn33 = []
+tfbga48 = []
+lqfp48 = []
+lqfp64 = []
+
+intrinsics = []
